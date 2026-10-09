@@ -1,0 +1,148 @@
+/* ======================================
+   Trusted Device Management CSS
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef5ff;
+    color:#333;
+}
+
+/* Header */
+
+header{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:25px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+header h1{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:16px;
+}
+
+/* Sections */
+
+section{
+    width:90%;
+    max-width:900px;
+    margin:25px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+section h2{
+    color:#003366;
+    margin-bottom:20px;
+    border-bottom:2px solid #0056b3;
+    padding-bottom:10px;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+table td,
+table th{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:left;
+}
+
+table th{
+    background:#003366;
+    color:white;
+}
+
+table tr:nth-child(even){
+    background:#f7f9fc;
+}
+
+table tr:hover{
+    background:#dcecff;
+}
+
+/* Security List */
+
+ul{
+    list-style:none;
+}
+
+ul li{
+    background:#f0f8ff;
+    padding:12px;
+    margin-bottom:10px;
+    border-left:5px solid #0056b3;
+    border-radius:6px;
+    font-size:16px;
+}
+
+/* Buttons */
+
+button{
+    background:#0056b3;
+    color:white;
+    border:none;
+    padding:12px 18px;
+    margin:10px 8px 0 0;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#003d80;
+    transform:scale(1.05);
+}
+
+/* Footer */
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:30px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    section{
+        width:95%;
+        padding:18px;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    button{
+        width:100%;
+        margin-top:12px;
+    }
+
+    header h1{
+        font-size:24px;
+    }
+}

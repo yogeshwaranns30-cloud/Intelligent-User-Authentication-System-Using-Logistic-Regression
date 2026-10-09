@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer Money</title>
+</head>
+
+<body>
+
+    <h2>💸 Transfer Money</h2>
+
+    <form method="POST">
+
+        <label>Receiver Name</label><br>
+        <input type="text" name="receiver_name" required>
+
+        <br><br>
+
+        <label>Receiver Account Number</label><br>
+        <input type="text" name="receiver_account" required>
+
+        <br><br>
+
+        <label>Amount</label><br>
+        <input type="number" name="amount" min="1" step="0.01" required>
+
+        <br><br>
+
+        <button type="submit">Transfer Money</button>
+
+    </form>
+
+</body>
+</html>

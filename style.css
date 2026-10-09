@@ -1,0 +1,70 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+body{
+    background:#f2f7ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* Registration Card */
+form{
+    background:#ffffff;
+    padding:30px;
+    width:400px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+/* Heading */
+h1{
+    text-align:center;
+    color:#003366;
+    margin-bottom:10px;
+}
+
+p{
+    text-align:center;
+    margin-bottom:20px;
+    color:#666;
+}
+
+/* Labels */
+label{
+    font-weight:bold;
+    color:#333;
+}
+
+/* Input Boxes */
+input{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+/* Register Button */
+button{
+    width:100%;
+    padding:12px;
+    background:#0056b3;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* Button Hover */
+button:hover{
+    background:#003d80;
+}

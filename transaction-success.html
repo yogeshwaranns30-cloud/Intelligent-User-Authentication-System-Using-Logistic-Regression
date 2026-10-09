@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Success</title>
+</head>
+
+<body>
+
+    <h2>✅ Transaction Successful</h2>
+
+    <p>Money transfer completed successfully.</p>
+
+    <p><b>Receiver:</b> {{ receiver_name }}</p>
+    <p><b>Account:</b> {{ receiver_account }}</p>
+    <p><b>Amount:</b> ₹{{ amount }}</p>
+
+    <br>
+
+    <a href="{{ url_for('dashboard') }}">
+        <button>Back to Dashboard</button>
+    </a>
+
+</body>
+</html>

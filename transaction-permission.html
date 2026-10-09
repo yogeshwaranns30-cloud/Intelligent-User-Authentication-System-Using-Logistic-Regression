@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Permission</title>
+</head>
+
+<body>
+
+    <h2>🔐 Transaction Permission</h2>
+
+    <p>OTP Verification Successful ✅</p>
+
+    <p>Please confirm this transaction.</p>
+
+    <form method="POST"
+          action="{{ url_for('complete_transaction') }}">
+
+        <input type="hidden"
+               name="transaction_id"
+               value="{{ transaction_id }}">
+
+        <button type="submit">
+            Confirm Transaction
+        </button>
+
+    </form>
+
+</body>
+</html>
+

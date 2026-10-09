@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Verification</title>
+</head>
+
+<body>
+
+    <h2>🎤 Voice Verification</h2>
+
+    <p>High-value transaction detected.</p>
+
+    <p><b>Receiver:</b> {{ receiver_name }}</p>
+    <p><b>Amount:</b> ₹{{ amount }}</p>
+
+    <br>
+
+    <p>Please complete voice verification.</p>
+
+    <button type="button" onclick="startVoiceVerification()">
+        🎤 Start Voice Verification
+    </button>
+
+    <p id="status"></p>
+
+    <form method="POST"
+          action="{{ url_for('verify_voice') }}">
+
+        <input type="hidden"
+               name="transaction_id"
+               value="{{ transaction_id }}">
+
+        <button type="submit">
+            Verify Voice
+        </button>
+
+    </form>
+
+</body>
+
+<script>
+
+function startVoiceVerification() {
+
+    document.getElementById("status").innerText =
+        "🎤 Voice verification started...";
+
+    setTimeout(function() {
+
+        document.getElementById("status").innerText =
+            "✅ Voice captured successfully. Click Verify Voice.";
+
+    }, 2000);
+}
+
+</script>
+
+</html>

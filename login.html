@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Banking Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>Secure Banking Login</h1>
+        <p>Login to your banking account</p>
+
+        <form method="POST" action="/login">
+
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter Username" required>
+
+            <br><br>
+
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+
+            
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <br>
+
+        <a href="#">Forgot Password?</a>
+        <br><br>
+
+<p>
+    Don't have an account?
+    <a href="/register">Register Here</a>
+</p>
+
+    </div>
+
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+</body>
+</html>

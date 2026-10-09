@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Security Logs</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/security-logs.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>🔒 Security Logs</h1>
+
+        <p>View Recent Security Activities</p>
+
+    </header>
+
+    <!-- Security Summary -->
+
+    <section class="summary">
+
+        <div class="card">
+
+            <h3>Total Login Attempts</h3>
+
+            <h2>18</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Approved Logins</h3>
+
+            <h2>15</h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Rejected Logins</h3>
+
+            <h2>3</h2>
+
+        </div>
+
+    </section>
+
+    <!-- Security Logs Table -->
+
+    <section class="logs">
+
+        <h2>Recent Login Activities</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Date</th>
+                <th>Time</th>
+                <th>Device</th>
+                <th>Location</th>
+                <th>Approval</th>
+                <th>Status</th>
+
+            </tr>
+
+            <tr>
+
+                <td>22 Jul 2026</td>
+                <td>10:45 AM</td>
+                <td>Windows Laptop</td>
+                <td>Chennai</td>
+                <td>YES</td>
+                <td>Login Allowed</td>
+
+            </tr>
+
+            <tr>
+
+                <td>21 Jul 2026</td>
+                <td>08:30 PM</td>
+                <td>Android Phone</td>
+                <td>Bangalore</td>
+                <td>NO</td>
+                <td>Emergency Banking Lock</td>
+
+            </tr>
+
+            <tr>
+
+                <td>20 Jul 2026</td>
+                <td>07:15 PM</td>
+                <td>MacBook</td>
+                <td>Coimbatore</td>
+                <td>YES</td>
+                <td>OTP Verification</td>
+
+            </tr>
+
+            <tr>
+
+                <td>18 Jul 2026</td>
+                <td>11:20 AM</td>
+                <td>iPhone</td>
+                <td>Madurai</td>
+                <td>YES</td>
+                <td>Face Verification</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Information -->
+
+    <section class="info">
+
+        <h2>Security Information</h2>
+
+        <ul>
+
+            <li>✔ Every unknown device login attempt is recorded.</li>
+
+            <li>✔ Approval history is stored securely.</li>
+
+            <li>✔ Security logs help identify suspicious activities.</li>
+
+            <li>✔ Logs will be stored in the database during backend implementation.</li>
+
+        </ul>
+
+    </section>
+
+    <!-- Navigation -->
+
+    <section class="navigation">
+
+        <button id="dashboardBtn">⬅ Back to Dashboard</button>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 SecureBank Guard | Security Monitoring System</p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/security-logs.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+</head>
+
+<body>
+
+    <h2>🔐 OTP Verification</h2>
+
+    <p>Transaction Amount: ₹{{ amount }}</p>
+    <p>Receiver: {{ receiver_name }}</p>
+
+    <form method="POST" action="{{ url_for('verify_otp') }}">
+
+        <input type="hidden" name="transaction_id"
+               value="{{ transaction_id }}">
+
+        <label>Enter OTP</label><br>
+
+        <input type="text"
+               name="otp"
+               maxlength="6"
+               required>
+
+        <br><br>
+
+        <button type="submit">Verify OTP</button>
+
+    </form>
+
+</body>
+</html>
+```

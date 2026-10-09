@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Banking Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>Secure Banking Registration</h1>
+    <p>Create your secure banking account.</p>
+
+    <form method="POST" action="/register">
+
+        <label for="fullname">Full Name</label><br>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        <br><br>
+
+        <label for="email">Email Address</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <br><br>
+
+        <label for="mobile">Mobile Number</label><br>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+        <br><br>
+
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" placeholder="Create a username" required>
+        <br><br>
+
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" placeholder="Create a password" required>
+        <br><br>
+
+        <label for="confirmPassword">Confirm Password</label><br>
+        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+        <br><br>
+
+        <button type="submit">Register</button>
+
+    </form>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trusted Device Management</title>
+
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/trusted-device.css') }}">
+
+</head>
+
+
+
+<body>
+
+
+
+    <!-- Header -->
+
+    <header>
+
+
+
+        <h1>📱 Trusted Device Management</h1>
+
+
+
+        <p>Manage your trusted devices securely.</p>
+
+
+
+    </header>
+
+
+
+    <!-- Trusted Device Details -->
+
+
+
+    <section>
+
+
+
+        <h2>📱 Registered Trusted Device</h2>
+
+
+
+        <table>
+
+
+
+            <tr>
+
+                <td><strong>Device Name</strong></td>
+
+                <td>Samsung Galaxy S24 Ultra</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td><strong>Device Type</strong></td>
+
+                <td>Android Mobile</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td><strong>Device ID</strong></td>
+
+                <td>DEV-00145897</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td><strong>Operating System</strong></td>
+
+                <td>Android 15</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td><strong>Registered On</strong></td>
+
+                <td>21 July 2026</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td><strong>Last Login</strong></td>
+
+                <td>Today - 10:45 AM</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td><strong>Status</strong></td>
+
+                <td>🟢 Verified</td>
+
+            </tr>
+
+
+
+        </table>
+
+
+
+    </section>
+</table>
+
+</section>
+
+<!-- 👇 INGA ITHA ADD PANNU -->
+
+<section>
+
+    <h2>➕ Register Trusted Device</h2>
+
+    <form method="POST" action="/trusted-device">
+
+        <label>Device Name</label><br>
+        <input type="text" name="device_name" required><br><br>
+
+        <label>Device Type</label><br>
+        <input type="text" name="device_type" required><br><br>
+
+        <label>Device ID</label><br>
+        <input type="text" name="device_id" required><br><br>
+
+        <label>OS Version</label><br>
+        <input type="text" name="os_version" required><br><br>
+
+        <button type="submit">Register Device</button>
+
+    </form>
+
+</section>
+
+
+<footer>
+
+    <p>© 2026 Secure Banking Authentication System</p>
+
+</footer>
+
+
+    <!-- Security Features -->
+
+
+
+    <section>
+
+
+
+        <h2>🛡 Security Features</h2>
+
+
+
+        <ul>
+
+
+
+            <li>✅ Trusted Mobile Enabled</li>
+
+
+
+            <li>✅ Push Notification Enabled</li>
+
+
+
+            <li>✅ AI Risk Monitoring Active</li>
+
+
+
+            <li>✅ Emergency Banking Lock Ready</li>
+
+
+
+            <li>✅ Device Fingerprint Registered</li>
+
+
+
+        </ul>
+
+
+
+    </section>
+
+
+
+    <!-- Quick Actions -->
+
+
+
+    <section>
+
+
+
+    <h2>📱 Registered Trusted Devices</h2>
+
+
+
+    <table border="1" cellpadding="10">
+
+
+
+        <tr>
+
+            <th>Device Name</th>
+
+            <th>Device Type</th>
+
+            <th>Device ID</th>
+
+            <th>OS Version</th>
+
+            <th>Status</th>
+            <th>Registered On</th>
+
+            <th>Action</th>
+
+        </tr>
+
+
+
+        {% for device in devices %}
+
+
+
+        <tr>
+
+            <td>{{ device[1] }}</td>
+
+            <td>{{ device[2] }}</td>
+
+            <td>{{ device[3] }}</td>
+
+            <td>{{ device[4] }}</td>
+
+            <td>{{ device[5] }}</td>
+            <td>{{ device[6] }}</td>
+
+            <td>
+
+                <a href="/remove-device/{{ device[0] }}">
+
+            <button>Remove</button>
+
+        </a>
+
+
+
+            </td>
+
+        </tr>
+
+
+
+        {% endfor %}
+
+
+
+    </table>
+
+
+
+</section>
+
+
+
+    <!-- Footer -->
+
+
+
+    <footer>
+
+
+
+        <p>© 2026 Secure Banking Authentication System</p>
+
+
+
+    </footer>
+
+
+
+    <script src="{{ url_for('static', filename='js/trusted-device.js') }}"></script>
+
+
+
+</body>
+
+
+
+</html>

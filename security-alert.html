@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Trusted Mobile Approval</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/security-alert.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>🏦 Secure Banking Authentication</h1>
+
+        <p>Trusted Mobile Approval Required</p>
+
+    </header>
+
+    <!-- Alert Card -->
+
+    <section class="alert-card">
+
+        <h2>🚨 Unknown Device Login Detected</h2>
+
+        <p>
+            Someone is attempting to log in to your bank account from a new device.
+            Please review the login request below.
+        </p>
+
+    </section>
+
+    <!-- Login Details -->
+
+    <section class="device-details">
+
+        <h2>Login Request Details</h2>
+
+        <table>
+
+            <tr>
+                <td><strong>Device Name</strong></td>
+                <td>Windows Laptop</td>
+            </tr>
+
+            <tr>
+                <td><strong>Browser</strong></td>
+                <td>Google Chrome</td>
+            </tr>
+
+            <tr>
+                <td><strong>Location</strong></td>
+                <td>Chennai, India</td>
+            </tr>
+
+            <tr>
+                <td><strong>Login Time</strong></td>
+                <td>22 July 2026 - 10:45 AM</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- Approval -->
+
+    <section class="approval">
+
+        <h2>Do You Approve This Login?</h2>
+
+        <p>
+            If this login attempt was made by you, press <strong>YES</strong>.
+
+            <br><br>
+
+            If you do not recognize this login attempt,
+            press <strong>NO</strong> immediately.
+        </p>
+
+        <button id="yesBtn">✅ YES</button>
+
+        <button id="noBtn">❌ NO</button>
+
+    </section>
+
+    <!-- Information -->
+
+    <section class="info">
+
+        <h2>Security Notice</h2>
+
+        <ul>
+
+            <li>✔ Only the registered trusted mobile can approve this request.</li>
+
+            <li>✔ Unauthorized users cannot approve this login.</li>
+
+            <li>✔ Your response will determine whether access is allowed or denied.</li>
+
+        </ul>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Secure Banking Authentication System</p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/security-alert.js') }}"></script>
+
+</body>
+
+</html>

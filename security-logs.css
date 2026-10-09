@@ -1,0 +1,195 @@
+/* =====================================
+   Security Logs CSS
+===================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef4ff;
+    color:#333;
+}
+
+/* Header */
+
+header{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:25px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.2);
+}
+
+header h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* Section */
+
+section{
+    width:90%;
+    max-width:1100px;
+    margin:25px auto;
+}
+
+/* Summary Cards */
+
+.summary{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    flex:1;
+    min-width:220px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.15);
+}
+
+.card h3{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.card h2{
+    color:#28a745;
+    font-size:32px;
+}
+
+/* Logs Table */
+
+.logs{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.15);
+}
+
+.logs h2{
+    color:#003366;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#003366;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    padding:15px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+table tr:nth-child(even){
+    background:#f5f8ff;
+}
+
+table tr:hover{
+    background:#dfefff;
+}
+
+/* Information */
+
+.info{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0px 5px 15px rgba(0,0,0,0.15);
+}
+
+.info h2{
+    color:#003366;
+    margin-bottom:15px;
+}
+
+.info ul{
+    list-style:none;
+}
+
+.info li{
+    background:#f4f9ff;
+    margin-bottom:12px;
+    padding:12px;
+    border-left:5px solid #0056b3;
+    border-radius:6px;
+}
+
+/* Navigation */
+
+.navigation{
+    text-align:center;
+}
+
+.navigation button{
+    background:#003366;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    font-size:18px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.navigation button:hover{
+    background:#0056b3;
+    transform:scale(1.05);
+}
+
+/* Footer */
+
+footer{
+    margin-top:30px;
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:18px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .summary{
+        flex-direction:column;
+    }
+
+    header h1{
+        font-size:25px;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    table th,
+    table td{
+        padding:10px;
+    }
+
+    .navigation button{
+        width:100%;
+    }
+
+}

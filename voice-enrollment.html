@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Enrollment</title>
+</head>
+
+<body>
+
+    <h2>🎤 Voice Enrollment</h2>
+
+    <p>Register your voice for transaction verification.</p>
+
+    <p><b>Please say:</b></p>
+
+    <p>"I approve this banking transaction"</p>
+
+    <button type="button" id="startBtn">
+        🎤 Start Recording
+    </button>
+
+    <button type="button" id="stopBtn" disabled>
+        ⏹ Stop Recording
+    </button>
+
+    <p id="status">Ready to record.</p>
+
+    <audio id="audioPlayer" controls></audio>
+
+    <br><br>
+
+    <button type="button" id="saveBtn" disabled>
+        💾 Save Voice
+    </button>
+
+    <form id="voiceForm"
+          method="POST"
+          action="{{ url_for('save_voice') }}">
+
+        <input type="hidden"
+               name="voice_data"
+               id="voiceData">
+
+    </form>
+
+    <script>
+
+        let mediaRecorder;
+        let audioChunks = [];
+        let audioBlob;
+
+        const startBtn = document.getElementById("startBtn");
+        const stopBtn = document.getElementById("stopBtn");
+        const saveBtn = document.getElementById("saveBtn");
+        const statusText = document.getElementById("status");
+        const audioPlayer = document.getElementById("audioPlayer");
+        const voiceData = document.getElementById("voiceData");
+        const voiceForm = document.getElementById("voiceForm");
+
+        startBtn.addEventListener("click", async function () {
+
+            try {
+
+                const stream =
+                    await navigator.mediaDevices.getUserMedia({
+                        audio: true
+                    });
+
+                audioChunks = [];
+
+                mediaRecorder =
+                    new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable =
+                    function (event) {
+
+                        audioChunks.push(event.data);
+
+                    };
+
+                mediaRecorder.onstop =
+                    function () {
+
+                        audioBlob = new Blob(
+                            audioChunks,
+                            {
+                                type: "audio/webm"
+                            }
+                        );
+
+                        const audioURL =
+                            URL.createObjectURL(audioBlob);
+
+                        audioPlayer.src = audioURL;
+
+                        saveBtn.disabled = false;
+
+                        statusText.innerText =
+                            "✅ Voice recorded successfully.";
+
+                        stream.getTracks().forEach(
+                            track => track.stop()
+                        );
+
+                    };
+
+                mediaRecorder.start();
+
+                startBtn.disabled = true;
+                stopBtn.disabled = false;
+
+                statusText.innerText =
+                    "🎤 Recording... Please speak.";
+
+            }
+
+            catch (error) {
+
+                statusText.innerText =
+                    "❌ Microphone permission denied.";
+
+                console.error(error);
+
+            }
+
+        });
+
+        stopBtn.addEventListener("click", function () {
+
+            if (
+                mediaRecorder &&
+                mediaRecorder.state === "recording"
+            ) {
+
+                mediaRecorder.stop();
+
+                startBtn.disabled = false;
+                stopBtn.disabled = true;
+
+            }
+
+        });
+
+        saveBtn.addEventListener("click", function () {
+
+            if (!audioBlob) {
+                return;
+            }
+
+            statusText.innerText =
+                "⏳ Saving voice...";
+
+            const reader = new FileReader();
+
+            reader.onloadend = function () {
+
+                voiceData.value = reader.result;
+
+                voiceForm.submit();
+
+            };
+
+            reader.readAsDataURL(audioBlob);
+
+        });
+
+    </script>
+
+</body>
+</html>

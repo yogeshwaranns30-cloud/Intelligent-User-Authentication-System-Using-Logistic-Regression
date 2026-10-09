@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Banking Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🏦 Secure Banking Dashboard</h1>
+        <p>Welcome, {{username}}</p>
+    </header>
+
+    <hr>
+
+    <!-- Account Balance -->
+    <section>
+        <h2>💰 Account Balance</h2>
+        <h1>₹ 2,45,600</h1>
+    </section>
+
+    <hr>
+
+    <!-- Quick Actions -->
+    <section>
+
+        <h2>Quick Actions</h2>
+
+
+
+<a href="{{ url_for('transfer') }}">
+    <button type="button">Transfer Money</button>
+</a>
+
+
+<button>Transaction History</button>
+
+<button>Add Beneficiary</button>
+
+<button id="trustedBtn">Trusted Device</button>
+<a href="{{ url_for('voice_enrollment') }}">
+    <button type="button">🎤 Voice Enrollment</button>
+</a>
+
+<button id="logsBtn">Security Logs</button>
+
+<button id="logoutBtn">Logout</button>
+
+    </section>
+
+    <hr>
+
+    
+
+    <hr>
+
+    <!-- Security Alerts -->
+    <section>
+
+        <h2>🚨 Security Alerts</h2>
+
+        <p>No suspicious activity detected.</p>
+
+    </section>
+
+    <hr>
+
+    <!-- Logout -->
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+
+</html>
